@@ -17,24 +17,24 @@ since the extra outcomes are just duplicates.
 
 function solve(arr) {
   let product = 1
-   let arrsFilt = new Set
- 
-   for (let i = 0; i < arr.length; i++) {
-     arrsFilt.add( arr[i].filter( (el, ind) => arr[i].indexOf(el) === ind) )
-   }
-   
-   arrsFilt = Array.from(arrsFilt)
- 
-   for (let j = 0; j < arrsFilt.length; j++) {
-     product *= arrsFilt[j].length
-   }
-   
-   return product
- };
+  let arrsFilt = new Set
 
- // or
+  for (let i = 0; i < arr.length; i++) {
+    arrsFilt.add( arr[i].filter( (el, ind) => arr[i].indexOf(el) === ind) )
+  }
+  
+  arrsFilt = Array.from(arrsFilt)
 
- function solve(arr) {
+  for (let j = 0; j < arrsFilt.length; j++) {
+    product *= arrsFilt[j].length
+  }
+  
+  return product
+};
+
+// or
+
+function solve(arr) {
   const nUnique = a => {
     let encountered = {};    
     return a.filter(e => !encountered[e] ? (encountered[e]=true) : false).length;
