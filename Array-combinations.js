@@ -33,3 +33,12 @@ function solve(arr) {
  };
 
  // or
+
+ function solve(arr) {
+  const nUnique = a => {
+    let encountered = {};    
+    return a.filter(e => !encountered[e] ? (encountered[e]=true) : false).length;
+  }
+
+  return arr.map(nUnique).reduce((acc,e) => acc * e, 1);
+};
