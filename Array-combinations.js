@@ -31,3 +31,5 @@ function solve(arr) {
    
    return product
  };
+
+ // or
