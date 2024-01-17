@@ -14,3 +14,20 @@ since the extra outcomes are just duplicates.
 
 
 // Solution
+
+function solve(arr) {
+  let product = 1
+   let arrsFilt = new Set
+ 
+   for (let i = 0; i < arr.length; i++) {
+     arrsFilt.add( arr[i].filter( (el, ind) => arr[i].indexOf(el) === ind) )
+   }
+   
+   arrsFilt = Array.from(arrsFilt)
+ 
+   for (let j = 0; j < arrsFilt.length; j++) {
+     product *= arrsFilt[j].length
+   }
+   
+   return product
+ };
